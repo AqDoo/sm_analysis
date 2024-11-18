@@ -14,17 +14,17 @@ import vk_api
 nltk.download('vader_lexicon')
 
 # Настройка VK API
-vk_session = vk_api.VkApi(token='3167edc73167edc73167edc7ed32455baf331673167edc7565fb70621ac932820d87898')  # Замените на ваш токен
+vk_session = vk_api.VkApi(token='серивсный ключ')  # Замените на ваш токен
 vk = vk_session.get_api()
 
 # Настройка Reddit API
 reddit = praw.Reddit(
-    client_id='B2Gcc5A3cWdUvBZ6oWvetg',
-    client_secret='nf3SO5phIQ5s200LXkmb4v7hdvyhbA',
-    user_agent='social_media_analysis/1.0 by /u/Happy_Cow_9698 ')
+    client_id='клиент',
+    client_secret='сервер',
+    user_agent='social_media_analysis/1.0 by /u/имя ')
 
 # Настройка YouTube API
-API_KEY = 'AIzaSyCATDA40htAs7Q-FWAA6D0ivY7MavJ02C4' # Замените на ваш ключ API
+API_KEY = 'гугл клауд апи' # Замените на ваш ключ API
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 
