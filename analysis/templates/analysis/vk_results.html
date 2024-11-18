@@ -1,0 +1,12 @@
+<h2>Результаты ВКонтакте</h2>
+<ul>
+    {% for result in vk_results %}
+        <li>
+            <img src="{{ result.image_url }}" alt="Изображение поста" width="200"><br>
+            Оценка сентимента изображения: {{ result.image_sentiment }}<br>
+            URL: <a href="{{ result.url }}">{{ result.url }}</a>
+        </li>
+    {% empty %}
+        <li>Результаты ВКонтакте не найдены.</li>
+    {% endfor %}
+</ul>

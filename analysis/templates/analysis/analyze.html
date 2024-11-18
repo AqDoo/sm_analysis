@@ -1,0 +1,10 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="reddit_url">Ссылка на Reddit:</label>
+    <input type="text" id="reddit_url" name="reddit_url"><br>
+
+    <label for="youtube_url">Ссылка на YouTube:</label>
+    <input type="text" id="youtube_url" name="youtube_url"><br>
+
+    <button type="submit">Анализировать</button>
+</form>
