@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+
+<h2>Reddit Results</h2>
+<ul>
+    {% for result in reddit_results %}
+        <li>
+            <strong>{{ result.title }}</strong><br>
+            {% if result.image_sentiment %}
+                <img src="{{ result.url }}" alt="Reddit Image" style="max-width: 200px; max-height: 200px;"><br>
+                Image Sentiment: {{ result.image_sentiment }}<br>
+            {% endif %}
+            {% if result.sentiment %}
+                Sentiment: {{ result.sentiment }}<br>
+            {% endif %}
+            URL: <a href="{{ result.url }}">{{ result.url }}</a>
+        </li>
+    {% empty %}
+        <li>No Reddit results found.</li>
+    {% endfor %}
+</ul>
+
+
+    <h2>YouTube Results</h2>
+    <ul>
+        {% for result in youtube_results %}
+            <li>
+                <strong>{{ result.title }}</strong><br>
+                Description Sentiment: {{ result.description_sentiment }}<br>
+                URL: <a href="{{ result.url }}">{{ result.url }}</a><br>
+                <strong>Comments Sentiment:</strong>
+                <ul>
+                    {% for sentiment in result.comments_sentiment %}
+                        <li>{{ sentiment }}</li>
+                    {% empty %}
+                        <li>No comments found.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <li>No YouTube results found.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'analyze' %}">Go back</a>
+</body>
+</html>

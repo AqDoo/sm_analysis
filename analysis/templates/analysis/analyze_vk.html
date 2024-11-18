@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="vk_url">Введите URL поста ВКонтакте:</label>
+    <input type="url" name="vk_url" required>
+    <button type="submit">Анализировать</button>
+</form>
